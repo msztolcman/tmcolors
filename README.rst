@@ -45,9 +45,9 @@ a color name.
 
 ::
 
-    from colors import color
+    from colors import colorize
     for i in range(256):
-        print color('Color #%d' % i, fg=i)
+        print colorize('Color #%d' % i, fg=i)
 
 
 License

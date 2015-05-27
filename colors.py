@@ -15,20 +15,19 @@
 #
 # Derived from https://github.com/verigak/colors
 
+from __future__ import print_function
+
 import re
 
 from functools import partial
 
+__version__ = '0.1.0'
 
-__version__ = '1.0.2'
-
-COLORS = ('black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan',
-          'white')
-STYLES = ('bold', 'faint', 'italic', 'underline', 'blink', 'blink2',
-          'negative', 'concealed', 'crossed')
+COLORS = ('black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white')
+STYLES = ('bold', 'faint', 'italic', 'underline', 'blink', 'blink2', 'negative', 'concealed', 'crossed')
 
 
-def color(s, fg=None, bg=None, style=None):
+def color(fg=None, bg=None, style=None):
     sgr = []
 
     if fg:
@@ -56,10 +55,23 @@ def color(s, fg=None, bg=None, style=None):
 
     if sgr:
         prefix = '\x1b[' + ';'.join(sgr) + 'm'
-        suffix = '\x1b[0m'
-        return prefix + s + suffix
+        return prefix
     else:
-        return s
+        return ''
+
+
+def reset():
+    suffix = '\x1b[0m'
+    return suffix
+
+
+def colorize(msg, fg=None, bg=None, style=None):
+    prefix = color(fg, bg, style)
+
+    if not prefix:
+        return msg
+
+    return prefix + msg + reset()
 
 
 def strip_color(s):
