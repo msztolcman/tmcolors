@@ -6,13 +6,13 @@ import colors
 
 
 setup(
-    name='ansicolors',
+    name='tmcolors',
     version=colors.__version__,
     description='ANSI colors for Python',
     long_description=open('README.rst').read(),
-    author='Giorgos Verigakis',
-    author_email='verigak@gmail.com',
-    url='http://github.com/verigak/colors/',
+    author='Giorgos Verigakis, Marcin Sztolcman',
+    author_email='marcin@urzenia.net',
+    url='https://github.com/mysz/tmcolors',
     license='ISC',
     py_modules=['colors'],
     classifiers=[
