@@ -11,7 +11,7 @@ magenta, cyan, white.
 
 ::
 
-    from colors import red, green, blue
+    from tmcolors import red, green, blue
     print red('This is red')
     print green('This is green')
     print blue('This is blue')
@@ -29,7 +29,7 @@ supported by all terminals.
 
 ::
 
-    from colors import bold, underline
+    from tmcolors import bold, underline
     print bold('This is bold')
     print underline('underline red on blue', fg='red', bg='blue')
     print green('bold green on black', bg='black', style='bold')
@@ -45,7 +45,7 @@ a color name.
 
 ::
 
-    from colors import colorize
+    from tmcolors import colorize
     for i in range(256):
         print colorize('Color #%d' % i, fg=i)
 

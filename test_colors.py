@@ -2,7 +2,7 @@
 
 from __future__ import print_function
 
-from colors import colorize, COLORS, STYLES
+from tmcolors import colorize, COLORS, STYLES
 
 
 for bg in (None,) + COLORS:
