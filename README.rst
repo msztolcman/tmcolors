@@ -53,4 +53,4 @@ a color name.
 License
 -------
 
-colors is licensed under the ISC license.
+tmcolors is licensed under the ISC license.
