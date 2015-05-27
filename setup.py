@@ -2,12 +2,9 @@
 
 from setuptools import setup
 
-import tmcolors
-
-
 setup(
     name='tmcolors',
-    version=tmcolors.__version__,
+    version='0.1.0',
     description='ANSI colors for Python',
     long_description=open('README.rst').read(),
     author='Giorgos Verigakis, Marcin Sztolcman',
