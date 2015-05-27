@@ -78,23 +78,25 @@ def strip_color(s):
     return re.sub('\x1b\[.+?m', '', s)
 
 
-# Foreground shortcuts
-black = partial(color, fg='black')
-red = partial(color, fg='red')
-green = partial(color, fg='green')
-yellow = partial(color, fg='yellow')
-blue = partial(color, fg='blue')
-magenta = partial(color, fg='magenta')
-cyan = partial(color, fg='cyan')
-white = partial(color, fg='white')
+def cprint(msg, fg=None, bg=None, style=None, **kwargs):
+    print(colorize(msg, fg=fg, bg=bg, style=style, **kwargs))
 
-# Style shortcuts
-bold = partial(color, style='bold')
-faint = partial(color, style='faint')
-italic = partial(color, style='italic')
-underline = partial(color, style='underline')
-blink = partial(color, style='blink')
-blink2 = partial(color, style='blink2')
-negative = partial(color, style='negative')
-concealed = partial(color, style='concealed')
-crossed = partial(color, style='crossed')
+
+black = partial(colorize, fg='black')
+red = partial(colorize, fg='red')
+green = partial(colorize, fg='green')
+yellow = partial(colorize, fg='yellow')
+blue = partial(colorize, fg='blue')
+magenta = partial(colorize, fg='magenta')
+cyan = partial(colorize, fg='cyan')
+white = partial(colorize, fg='white')
+
+bold = partial(colorize, style='bold')
+faint = partial(colorize, style='faint')
+italic = partial(colorize, style='italic')
+underline = partial(colorize, style='underline')
+blink = partial(colorize, style='blink')
+blink2 = partial(colorize, style='blink2')
+negative = partial(colorize, style='negative')
+concealed = partial(colorize, style='concealed')
+crossed = partial(colorize, style='crossed')
